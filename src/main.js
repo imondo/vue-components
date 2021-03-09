@@ -1,4 +1,9 @@
-import { createApp } from "vue";
-import App from "./App.vue";
+import { createApp } from 'vue';
+import App from './App.vue';
+import AinUI from './libs/ainui';
+import router from './routes';
 
-createApp(App).mount("#app");
+createApp(App)
+  .use(AinUI)
+  .use(router)
+  .mount('#app');

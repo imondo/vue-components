@@ -1,24 +1,15 @@
 # vue-components
 
-## Project setup
-```
-yarn install
-```
+> Vue PC 端组件库封装示例
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## 组件
 
-### Compiles and minifies for production
-```
-yarn build
-```
+- 放大镜 组件
 
-### Lints and fixes files
-```
-yarn lint
-```
+## TODO
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- [ ] 瀑布流
+
+- [ ] 表格编辑方案
+
+...
