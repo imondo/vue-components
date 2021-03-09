@@ -1,11 +1,9 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 
-const Tem = { template: '<div>Home</div>' };
-
 const routes = [
   {
     path: '/',
-    component: Tem
+    component: () => import('./demo/main.vue')
   },
   {
     path: '/magnifier',
