@@ -4,7 +4,11 @@
 
 ## 组件
 
-- 放大镜 组件
+- Magnifier 放大镜
+
+- Checkbox 多选框
+
+- Image 图片
 
 ## TODO
 

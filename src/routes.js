@@ -12,6 +12,10 @@ const routes = [
   {
     path: '/checkbox',
     component: () => import('./demo/checkbox-demo.vue')
+  },
+  {
+    path: '/image',
+    component: () => import('./demo/image-demo.vue')
   }
 ];
 

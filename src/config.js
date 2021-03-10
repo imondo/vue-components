@@ -10,5 +10,9 @@ export const menu = [
   {
     title: '多选框',
     path: '/checkbox'
+  },
+  {
+    title: '图片',
+    path: '/image'
   }
 ];
