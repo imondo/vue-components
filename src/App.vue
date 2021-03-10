@@ -58,4 +58,7 @@ section {
   align-items: center;
   margin-top: 20px;
 }
+.mb-20 {
+  margin-bottom: 20px;
+}
 </style>

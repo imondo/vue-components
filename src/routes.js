@@ -8,6 +8,10 @@ const routes = [
   {
     path: '/magnifier',
     component: () => import('./demo/magnifier-demo.vue')
+  },
+  {
+    path: '/checkbox',
+    component: () => import('./demo/checkbox-demo.vue')
   }
 ];
 
