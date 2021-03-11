@@ -23,7 +23,7 @@ import {
   getScrollContainer,
   onListener,
   removeListener,
-  throttle
+  debounce
 } from '../../utils/tools';
 
 export default {
@@ -65,7 +65,7 @@ export default {
     function addLazyLoad() {
       _scrollContainer = getScrollContainer(container.value);
       if (_scrollContainer) {
-        _lazyloadImage = throttle(onLazyLoad, 200);
+        _lazyloadImage = debounce(onLazyLoad, 200);
         onListener(_scrollContainer, 'scroll', _lazyloadImage);
         setTimeout(() => onLazyLoad(), 100);
       }

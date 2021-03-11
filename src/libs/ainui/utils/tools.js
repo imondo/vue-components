@@ -68,6 +68,16 @@ export function removeListener(el, handler, func) {
   _container.removeEventListener(handler, func, false);
 }
 
+export function debounce(fn, delay = 200) {
+  let timer;
+  return function() {
+    clearTimeout(timer);
+    timer = setTimeout(function() {
+      fn.apply(this, arguments);
+    }, delay);
+  };
+}
+
 export function throttle(fn, delay = 200) {
   let prv = 0;
   return function() {
