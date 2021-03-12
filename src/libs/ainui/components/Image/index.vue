@@ -22,7 +22,14 @@
 </template>
 
 <script>
-import { nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
+import {
+  nextTick,
+  onBeforeUnmount,
+  onMounted,
+  ref,
+  watch,
+  getCurrentInstance
+} from 'vue';
 import {
   isInViewport,
   getScrollContainer,
@@ -50,6 +57,8 @@ export default {
     let _scrollContainer = null;
     let _lazyloadImage = null;
 
+    const { emit } = getCurrentInstance();
+
     const loadImage = () => {
       loading.value = true;
       const img = new Image();
@@ -61,11 +70,13 @@ export default {
     function onLoad() {
       loading.value = false;
       hasError.value = false;
+      emit('load');
     }
 
     function onErrorLoad() {
       loading.value = false;
       hasError.value = true;
+      emit('error');
     }
 
     function onLazyLoad() {

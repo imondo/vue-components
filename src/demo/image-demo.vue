@@ -6,6 +6,7 @@
           src="https://goss1.cfp.cn/creative/vcg/veer/800/new/VCG41N656530362.jpg"
           alt="logo"
           style="width: 100px; height: 100px"
+          @load="onLoad"
         ></ani-image>
         <p>fill</p>
       </div>
@@ -34,6 +35,7 @@
         src="https://goss1.cfp.cn/creative/vcg/veer/800/new/VCG41N656530362.jp"
         alt="logo"
         style="width: 100px; height: 100px"
+        @error="onError"
       ></ani-image>
     </div>
     <div class="mb-20">
@@ -69,7 +71,13 @@ export default {
       'https://tenfei01.cfp.cn/creative/vcg/veer/800water/veer-154228735.jpg'
     ]);
     return {
-      images
+      images,
+      onLoad: () => {
+        console.log('load');
+      },
+      onError: () => {
+        console.log('error');
+      }
     };
   }
 };
