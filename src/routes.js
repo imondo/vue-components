@@ -16,6 +16,10 @@ const routes = [
   {
     path: '/image',
     component: () => import('./demo/image-demo.vue')
+  },
+  {
+    path: '/waterfall',
+    component: () => import('./demo/waterfall-demo.vue')
   }
 ];
 

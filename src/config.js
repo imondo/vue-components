@@ -14,5 +14,9 @@ export const menu = [
   {
     title: '图片',
     path: '/image'
+  },
+  {
+    title: '瀑布流',
+    path: '/waterfall'
   }
 ];
