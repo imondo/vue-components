@@ -5,6 +5,11 @@
         <img src="./loading.svg" alt="loading" />
       </div>
     </slot>
+    <slot v-else-if="hasError" name="error">
+      <div class="ani-loading" :class="{ 'err-img': hasError }" :alt="alt">
+        <img src="./error.svg" alt="error" />
+      </div>
+    </slot>
     <img
       v-else
       :src="src"
@@ -39,6 +44,7 @@ export default {
   },
   setup(props) {
     const loading = ref(true);
+    const hasError = ref(false);
     const container = ref(null);
 
     let _scrollContainer = null;
@@ -48,11 +54,18 @@ export default {
       loading.value = true;
       const img = new Image();
       img.onload = () => onLoad();
+      img.onerror = () => onErrorLoad();
       img.src = props.src;
     };
 
     function onLoad() {
       loading.value = false;
+      hasError.value = false;
+    }
+
+    function onErrorLoad() {
+      loading.value = false;
+      hasError.value = true;
     }
 
     function onLazyLoad() {
@@ -98,6 +111,7 @@ export default {
 
     return {
       loading,
+      hasError,
       container
     };
   }
@@ -111,6 +125,7 @@ export default {
     height: 100%;
   }
   .ani-loading {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -119,6 +134,19 @@ export default {
     img {
       width: 25px;
       height: 25px;
+    }
+    &.err-img::after {
+      content: attr(alt);
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 20px;
+      line-height: 20px;
+      overflow: hidden;
+      font-size: 12px;
+      color: #333;
+      text-align: center;
     }
   }
 }
