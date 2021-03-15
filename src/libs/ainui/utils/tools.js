@@ -5,6 +5,10 @@ export function getStyle(el, prop, isNumber = true) {
   return window.getComputedStyle(el, null)[prop];
 }
 
+export function hasOwn(obj, prop) {
+  return Object.prototype.hasOwnProperty.call(obj, prop);
+}
+
 export function isPropType(prop, type) {
   const types = {
     string: '[object String]',

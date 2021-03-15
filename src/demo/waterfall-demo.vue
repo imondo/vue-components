@@ -1,17 +1,25 @@
 <template>
   <div class="waterfall">
-    <waterfall-list :list="imageList">
+    <waterfall-list ref="waterFall" :list="imageList">
       <template v-slot:default="{ item }">
-        <img :src="item" />
+        <img :src="item"/>
       </template>
     </waterfall-list>
   </div>
 </template>
 
 <script>
+import { onMounted, ref } from 'vue';
 export default {
   setup() {
+    const waterFall = ref(null);
+
+    onMounted(() => {
+      console.log(waterFall.value);
+    })
+
     return {
+      waterFall,
       imageList: [
         'https://i.pinimg.com/236x/f4/dc/58/f4dc58f3bddf1c5b5249511820246df8.jpg',
         'https://i.pinimg.com/236x/50/9e/3a/509e3ac9af5c305e83eddc25b748214b.jpg',
