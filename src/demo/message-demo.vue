@@ -13,17 +13,17 @@
 import { getCurrentInstance } from 'vue';
 export default {
   setup() {
-    const { ctx } = getCurrentInstance();
+    const { proxy } = getCurrentInstance();
     return {
       onClick: () => {
-        ctx.$message('hello world');
+        proxy.$message('hello world');
       },
       onCallClick: () => {
-        ctx.$message({
+        proxy.$message({
           msg: '这是回调',
           onClose: (vm) => {
             console.log(vm);
-            ctx.$message('回调关闭');
+            proxy.$message('回调关闭');
           }
         });
       }
