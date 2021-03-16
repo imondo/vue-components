@@ -1,5 +1,11 @@
 import { onMounted, ref, onBeforeUnmount } from 'vue';
-import { getStyle, isPropType, hasOwn, onListener, removeListener } from '../../utils/tools';
+import {
+  getStyle,
+  isPropType,
+  hasOwn,
+  onListener,
+  removeListener
+} from '../../utils/tools';
 
 export function useWaterfall(props) {
   const waterfallWrapper = ref(null);
@@ -15,15 +21,16 @@ export function useWaterfall(props) {
   });
 
   // 加载完图片
-  const loadImage = (item) => {
-    return new Promise((resolve) => {
+  const loadImage = item => {
+    return new Promise(resolve => {
       const img = new Image();
-      img.src = isPropType(item, 'object') && hasOwn(item, 'img') ? item.img : item;
+      img.src =
+        isPropType(item, 'object') && hasOwn(item, 'img') ? item.img : item;
       img.onload = img.onerror = () => {
         resolve();
-      }
-    })
-  }
+      };
+    });
+  };
 
   function waterfall() {
     const fallItem = document.querySelectorAll('.waterfall-item');
@@ -54,8 +61,7 @@ export function useWaterfall(props) {
           fallItem[i].style.left = fallItem[index].offsetLeft + 'px';
           arr[index] = arr[index] + fallItem[i].offsetHeight + gap;
         }
-      })  
-
+      });
     });
   }
   return {

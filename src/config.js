@@ -1,22 +1,22 @@
 export const menu = [
   {
-    title: '主页',
-    path: '/'
-  },
-  {
     title: '放大镜',
-    path: '/magnifier'
+    path: 'magnifier'
   },
   {
     title: '多选框',
-    path: '/checkbox'
+    path: 'checkbox'
   },
   {
     title: '图片',
-    path: '/image'
+    path: 'image'
   },
   {
     title: '瀑布流',
-    path: '/waterfall'
-  }
+    path: 'waterfall'
+  },
+  {
+    title: '消息提示',
+    path: 'message'
+  },
 ];

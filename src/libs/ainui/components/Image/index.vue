@@ -39,7 +39,7 @@ import {
 } from '../../utils/tools';
 
 export default {
-  name: 'Image',
+  name: 'AniImage',
   props: {
     src: String,
     alt: String,

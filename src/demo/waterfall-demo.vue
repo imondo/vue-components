@@ -2,7 +2,7 @@
   <div class="waterfall">
     <waterfall-list ref="waterFall" :list="imageList">
       <template v-slot:default="{ item }">
-        <img :src="item"/>
+        <img :src="item" />
       </template>
     </waterfall-list>
   </div>
@@ -16,7 +16,7 @@ export default {
 
     onMounted(() => {
       console.log(waterFall.value);
-    })
+    });
 
     return {
       waterFall,

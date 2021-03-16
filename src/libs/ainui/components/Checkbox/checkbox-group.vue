@@ -9,7 +9,7 @@ import { computed, nextTick, provide, toRefs } from 'vue';
 import { UPDATE_MODEL_EVENT, CHANGE_EVENT } from '../../utils/constants';
 
 export default {
-  name: 'CheckGroup',
+  name: 'AniCheckboxGroup',
   props: {
     modelValue: {
       type: [Array],

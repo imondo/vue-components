@@ -2,9 +2,15 @@
   <div class="main">
     <h1>Ain UI</h1>
     <p>Vue PC 端组件库封装示例</p>
-    <a href="https://github.com/one-pupil/vue-components" target="_blank">
-      Github
-    </a>
+    <div class="main-nav">
+      <a href="https://github.com/one-pupil/vue-components" target="_blank">
+        Github
+      </a>
+      <!-- /
+      <router-link to="/nav" target="_blank">
+        导航
+      </router-link> -->
+    </div>
   </div>
 </template>
 
@@ -26,9 +32,14 @@ export default {
     font-size: 13px;
     color: #333;
   }
-  a {
+  .main-nav {
     font-size: 12px;
     color: #999;
+    a {
+      font-size: 12px;
+      color: #999;
+      padding: 0 5px;
+    }
   }
 }
 </style>

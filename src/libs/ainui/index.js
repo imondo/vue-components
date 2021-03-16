@@ -1,17 +1,41 @@
 const AinUI = {};
 
 import Magnifier from './components/Magnifier';
-import Checkbox from './components/Checkbox';
-import CheckboxGroup from './components/Checkbox/checkbox-group.vue';
-import Image from './components/Image';
+import AniCheckbox from './components/Checkbox';
+import AniCheckboxGroup from './components/Checkbox/checkbox-group.vue';
+import AniImage from './components/Image';
 import WaterfallList from './components/WaterfallList';
+import AniMessage from './components/Message/index.js';
 
-AinUI.install = function(Vue) {
-  Vue.component('Magnifier', Magnifier);
-  Vue.component('AniCheckbox', Checkbox);
-  Vue.component('AniCheckboxGroup', CheckboxGroup);
-  Vue.component('AniImage', Image);
-  Vue.component('WaterfallList', WaterfallList);
-};
+const components = [
+  Magnifier,
+  AniCheckbox,
+  AniCheckboxGroup,
+  AniImage,
+  WaterfallList
+]
+
+const plugins = [
+  AniMessage
+]
+
+AinUI.install = app => {
+  components.forEach(component => {
+    app.component(component.name, component)
+  })
+
+  plugins.forEach(plugin => {
+    app.use(plugin)
+  })
+}
+
+export {
+  Magnifier,
+  AniCheckbox,
+  AniCheckboxGroup,
+  AniImage,
+  WaterfallList,
+  AniMessage
+}
 
 export default AinUI;

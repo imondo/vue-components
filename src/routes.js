@@ -1,25 +1,47 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
+import { menu } from './config';
+import LayoutUI from './layouts/layout-ui';
+import LayoutNav from './layouts/layout-nav';
+
+const loadComponents = menu => {
+  const routes = [];
+  for (const comp of menu) {
+    const { path } = comp;
+    const res = `${path}-demo.vue`;
+    const item = {
+      path: '/' + path,
+      component: () => import(`@/demo/${res}`)
+    };
+    routes.push(item);
+  }
+  return routes;
+};
+
+const compRoutes = loadComponents(menu);
 
 const routes = [
   {
     path: '/',
-    component: () => import('./demo/main.vue')
+    redirect: '/index',
+    component: LayoutUI,
+    children: [
+      {
+        path: 'index',
+        component: () => import('./components/main.vue')
+      },
+      ...compRoutes
+    ]
   },
   {
-    path: '/magnifier',
-    component: () => import('./demo/magnifier-demo.vue')
-  },
-  {
-    path: '/checkbox',
-    component: () => import('./demo/checkbox-demo.vue')
-  },
-  {
-    path: '/image',
-    component: () => import('./demo/image-demo.vue')
-  },
-  {
-    path: '/waterfall',
-    component: () => import('./demo/waterfall-demo.vue')
+    path: '/nav',
+    component: LayoutNav,
+    redirect: '/nav/page',
+    children: [
+      {
+        path: 'page',
+        component: () => import('./components/nav.vue')
+      }
+    ]
   }
 ];
 

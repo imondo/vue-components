@@ -23,7 +23,7 @@
 import { useCheckbox } from './useCheckbox';
 import { UPDATE_MODEL_EVENT, CHANGE_EVENT } from '../../utils/constants';
 export default {
-  name: 'Checkbox',
+  name: 'AniCheckbox',
   props: {
     modelValue: {
       type: [Boolean, Number, String],
