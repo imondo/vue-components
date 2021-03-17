@@ -9,10 +9,12 @@
 </template>
 
 <script>
+import { getCurrentInstance } from 'vue';
 export default {
   setup() {
+    const { proxy } = getCurrentInstance();
     const getStarNum = num => {
-      console.log(num);
+      proxy.$message(`你提交了：${num} 分！`);
     };
 
     return {
