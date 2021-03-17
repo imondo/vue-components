@@ -21,7 +21,7 @@ export default {
       onCallClick: () => {
         proxy.$message({
           msg: '这是回调',
-          onClose: (vm) => {
+          onClose: vm => {
             console.log(vm);
             proxy.$message('回调关闭');
           }
@@ -32,5 +32,4 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
-</style>
+<style lang="less" scoped></style>

@@ -19,4 +19,8 @@ export const menu = [
     title: '消息提示',
     path: 'message'
   },
+  {
+    title: '评分',
+    path: 'stars'
+  }
 ];

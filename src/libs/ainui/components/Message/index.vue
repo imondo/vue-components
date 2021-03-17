@@ -1,5 +1,9 @@
 <template>
-  <transition name="message-fade" @before-leave="onClose" @after-leave="$emit('destroy')">
+  <transition
+    name="message-fade"
+    @before-leave="onClose"
+    @after-leave="$emit('destroy')"
+  >
     <div v-show="visible" class="ani-message">
       <div class="ani-message-content">{{ message }}</div>
     </div>
@@ -89,7 +93,7 @@ export default {
   list-style: none;
   pointer-events: none;
   transform: translateX(-50%);
-  transition: opacity 0.3s, transform .4s, top 0.4s;
+  transition: opacity 0.3s, transform 0.4s, top 0.4s;
   .ani-message-content {
     display: inline-block;
     padding: 10px 16px;
