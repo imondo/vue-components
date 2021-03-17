@@ -12,6 +12,10 @@
 
 - WaterfallList 瀑布流
 
+- message 消息提示
+
+- stars 评分
+
 ## TODO
 
 - [ ] 表格编辑方案
