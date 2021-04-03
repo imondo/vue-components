@@ -7,7 +7,11 @@
         'iconfont icon-star',
         num <= starNum ? 'icon-star-on' : 'icon-star-off'
       ]"
-      :style="{ fontSize: size + 'px', color: num <= starNum ? color : '', '--on-color': color }"
+      :style="{
+        fontSize: size + 'px',
+        color: num <= starNum ? color : '',
+        '--on-color': color
+      }"
       @click="setStarNum(num)"
     >
     </span>
@@ -89,7 +93,7 @@ export default {
     transition: all 0.5s;
     &:hover {
       color: var(--on-color);
-      &::before{
+      &::before {
         content: '\e6ac';
       }
     }
